@@ -1,8 +1,17 @@
 function Modal(props){
-    return <div>
+
+    function cancelHandler(){
+        props.onCancel();
+    }
+
+    function yesHandler(){
+        props.onYes();
+    }
+
+    return <div className="modal">
         <p>Are you sure you want to delete this Item</p>
-        <button className="btn">Yes</button>
-        <button className="btn btn--alt">Cancel</button>
+        <button className="btn" onClick={yesHandler}>Yes</button>
+        <button className="btn btn--alt" onClick={cancelHandler}>Cancel</button>
     </div>
 }
 export default Modal;
